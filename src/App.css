@@ -1,38 +1,71 @@
-.App {
-  text-align: center;
+.accordion {
+  width: 100%;
+  max-width: 342px;
+  margin: 0 auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.accordion-item {
+  border: 1px solid #ccc; /* Ensure border color is applied */
+  border-radius: 12px; /* Rounded corners for each item */
+  margin-bottom: 10px;
+  overflow: hidden; /* Ensure content does not overflow the container */
+  background-color: #fff; /* Ensure item background is set for visibility */
+  border-color: #ff6b82;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.accordion-header {
+  position: relative;
+  padding: 10px;
+  cursor: pointer;
+  background: linear-gradient(to right, #ff6b82 20%, transparent 20%);
+  transition: background-color 0.3s ease; /* Smooth transition for background color change */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.accordion-header.open {
+  background: transparent; /* Transparent background when open */
+}
+
+.title-container {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.title-right {
+  text-align: start;
+  flex: 1; /* Take up remaining space */
+}
+
+.title-center {
+  text-align: center;
+  flex: 10; /* Take up remaining space */
+}
+
+.accordion-title {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.2;
   color: white;
+  max-width: 50px; /* Adjust this width as needed */
+  word-wrap: break-word; /* Allows long words to break and wrap */
+  overflow-wrap: break-word;
 }
 
-.App-link {
-  color: #61dafb;
+.accordion-content {
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0 10px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#yes {
+  border: 2px solid white;
+  box-shadow: 0 0 0 1px #ff6b82;
+  appearance: none;
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  transition: all ease-in 0.2s;
+}
+#yes:checked {
+  background-color: #ff6b82;
 }

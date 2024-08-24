@@ -1,26 +1,46 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Accordion from "./Accordion";
+import React, { useState } from "react";
+import { Sections } from "./molecule/Sections";
+import CustomButton from "./atoms/Button";
+import TotalAmount from "./Totalamount/TotalAmount";
 
-function App() {
+const App: React.FC = () => {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const handleToggleAccordion = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        margin: "0 auto", // Center horizontally
+        height: "100vh", // Full viewport height
+        justifyContent: "center", // Center vertically
+        alignItems: "center", // Center horizontally
+      }}
+    >
+      <span
+        style={{
+          fontWeight: 700,
+          fontSize: "21.08px",
+          lineHeight: "25.51px",
+          marginBottom: "28px",
+          color: "#ff6b82",
+        }}
+      >
+        YAY! It’s BOGO
+      </span>
+      <Accordion
+        sections={Sections}
+        openIndex={openIndex}
+        onToggleAccordion={handleToggleAccordion}
+      />
+      <TotalAmount />
+      <CustomButton />
     </div>
   );
-}
+};
 
 export default App;
