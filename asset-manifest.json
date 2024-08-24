@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/prove-way/static/css/main.b4c7b002.css",
+    "main.js": "/prove-way/static/js/main.7b990578.js",
+    "index.html": "/prove-way/index.html",
+    "main.b4c7b002.css.map": "/prove-way/static/css/main.b4c7b002.css.map",
+    "main.7b990578.js.map": "/prove-way/static/js/main.7b990578.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b4c7b002.css",
+    "static/js/main.7b990578.js"
+  ]
+}
